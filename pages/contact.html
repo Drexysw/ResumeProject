@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
+    <link rel="stylesheet" href="../css/pages/contact.css">
+    <script src="../js/script.js"></script>
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <navbar-component></navbar-component>
+    <main class="contact-main">
+        <div class="contact-container">
+            <div class="icon-container">
+                <i class="fas fa-envelope"></i>
+                <h1>Contact Me</h1>
+            </div>
+            <form class="contact-form" onsubmit="return false;">
+                <div class="form-group">
+                    <div class="input-border"></div>
+                    <input type="text" id="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <div class="input-border"></div>
+                    <input type="email" id="email" required>
+                    <label for="email">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <div class="input-border"></div>
+                    <textarea id="message" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <div style="position: relative;">
+                    <div class="button-border"></div>
+                    <button type="submit">
+                        Send Message
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer-component></footer-component>
+</body>
+</html>

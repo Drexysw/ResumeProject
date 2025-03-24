@@ -1,4 +1,4 @@
-
+//Toggle Full Screen js function
 function toggleFullScreen() {
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
@@ -6,8 +6,9 @@ function toggleFullScreen() {
         document.exitFullscreen();
     }
 } 
+
+//Download CV js function
 function downloadCV() {
-    // Adjust the file path and filename as needed
     const filePath = '/assets/files/D.Kanev CV.pdf';
 
     // Create a temporary anchor element
@@ -20,6 +21,8 @@ function downloadCV() {
     link.click();
     document.body.removeChild(link);
   }
+  
+//Redirect to Contact Page js function
 function redirectToContact() {
     window.location.href = '/pages/contact.html';
 }

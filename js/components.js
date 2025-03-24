@@ -9,7 +9,7 @@ class ComponentLoader {
             const templateResponse = await fetch(templatePath);
             const template = await templateResponse.text();
 
-            // Create and register the component
+            // Create and register the component    
             customElements.define(name, class extends HTMLElement {
                 constructor() {
                     super();
@@ -43,3 +43,11 @@ componentLoader.registerComponent(
     '/components/navbar/navbar.html',
     '/css/components/navbar.css'
 );
+
+// Register the footer component
+componentLoader.registerComponent(
+    'footer-component',
+    '/components/footer/footer.html',
+    '/css/components/footer.css'
+);
+
