@@ -1,9 +1,13 @@
+/* Navbar container animation */
 header {
     padding: 1rem;
     position: relative;
     z-index: 10;
+    animation: slideDown 0.8s ease forwards;
+    transform: translateY(-100%);
 }
 
+/* Navigation list styles */
 header > nav > ul {
     display: flex;
     justify-content: flex-start;
@@ -12,15 +16,67 @@ header > nav > ul {
     margin-left: 1rem;
 }
 
+/* Navigation link styles */
 header > nav > ul > li > a {
     font-size: 1.3rem;
     font-weight: bold;
-    transition: color 0.3s ease;
-    position: relative;
     color: #fff;
     text-decoration: none;
+    position: relative;
+    z-index: 11;
+    padding: 0.5rem 0;
 }
 
+/* Underline animation for links */
+header > nav > ul > li > a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+/* Hover effect for links */
 header > nav > ul > li > a:hover {
     color: #007bff;
+}
+
+header > nav > ul > li > a:hover::after {
+    width: 100%;
+}
+
+/* Add stagger effect to nav items */
+header > nav > ul > li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+header > nav > ul > li:nth-child(1) { animation-delay: 0.1s; }
+header > nav > ul > li:nth-child(2) { animation-delay: 0.2s; }
+header > nav > ul > li:nth-child(3) { animation-delay: 0.3s; }
+header > nav > ul > li:nth-child(4) { animation-delay: 0.4s; }
+header > nav > ul > li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Keyframe animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 } 
