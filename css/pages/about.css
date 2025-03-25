@@ -4,28 +4,220 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #000;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: rgb(27, 27, 27);
+    color: #fff;
+    line-height: 1.6;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    animation: titleFadeIn 0.8s ease forwards;
 }
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #00ff88);
+    animation: lineGrow 0.8s ease forwards 0.3s;
+}
+
+.me-image{
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+}
+.about-me{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+    padding-top: 0;
+}
+.about-content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.about-text {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1s ease forwards;
+}
+.about-text p {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 1.5rem;
+}
+.about-image {
+    flex: 1;
+    position: relative;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 1s ease 0.3s forwards;
+}
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.2);
+}
+.about-image::before {
+    display: none;
+}
+.projects {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+    width: 100%;
+}
+.project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+    width: 350px;
+    flex-shrink: 0;
+    text-align: center;
+}
+.project-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.project-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.card-content p {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.tech-stack span {
+    background: rgba(0, 123, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #007bff;
+}
+.project-link {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+}
+.project-link:hover {
+    gap: 1rem;
+}
+.skills {
+    padding: 8rem 0;
+    text-align: center;
+}
+.skills-container {
+    max-width: 800px;
+    margin: 4rem auto 0;
+}
+.skill-item {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.skill-name {
+    font-size: 1.2rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.5s ease forwards;
+}
+.skill-percentage {
+    color: #007bff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideInRight 0.5s ease forwards;
+}
+.skill-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #00ff88);
+    width: 0;
+    border-radius: 5px;
+    position: relative;
+    transition: width 1.5s ease-in-out;
+}
+/* Add animation delay for each skill item */
+.skill-item:nth-child(1) .skill-name,
+.skill-item:nth-child(1) .skill-percentage { animation-delay: 0.2s; }
+.skill-item:nth-child(2) .skill-name,
+.skill-item:nth-child(2) .skill-percentage { animation-delay: 0.4s; }
+.skill-item:nth-child(3) .skill-name,
+.skill-item:nth-child(3) .skill-percentage { animation-delay: 0.6s; }
+.skill-item:nth-child(4) .skill-name,
+.skill-item:nth-child(4) .skill-percentage { animation-delay: 0.8s; }
+
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -36,19 +228,158 @@ body{
         transform: translateX(0);
     }
 }
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes borderAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@media (max-width: 1200px) {
+    .project-cards {
+        flex-wrap: wrap;
+    }
+    
+    .project-card {
+        width: calc(50% - 1rem);
+    }
+}
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-text p {
+        font-size: 1.1rem;
+    }
+    
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+footer-component {
+    margin-top: auto;
+}
+
 /* Add smooth scroll behavior */
 html {
     scroll-behavior: smooth;
-}
-
-/* Ensure footer stays visible */
-footer-component {
-    position: relative;
-    z-index: 10;
 }
 
 /* Style social icons specifically for contact page */
 .social-icons {
     position: relative;
     z-index: 11;
+}
+
+.hero-section {
+    padding: 50px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.hero-text {
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    color: rgba(0, 123, 255, 0.05);
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: heroTextFadeIn 1.5s ease forwards;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+
+.hero-text::after {
+    content: 'WHO AM I?';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    color: #007bff;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    z-index: 1;
+    opacity: 0;
+    animation: smallTextFadeIn 1s ease forwards 0.8s;
+}
+
+@keyframes heroTextFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes smallTextFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }       
+

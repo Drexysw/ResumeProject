@@ -4,18 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/pages/about.css">
     <script src="../js/script.js"></script>
     <script src="../js/components.js"></script>
+    <script src="../js/about.js"></script>
 </head>
 <body>
     <navbar-component></navbar-component>
     <main>
+        <section class="hero-section">
+            <div class="hero-text">ABOUT</div>
+        </section>
+
         <section class="about-me">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Hi! My name is Danislav</h2>
+                    <p>I am a passionate developer dedicated to creating innovative digital solutions. With a keen eye for detail and a love for clean code, I transform ideas into reality. My journey in technology has equipped me with diverse skills and a problem-solving mindset that I bring to every project.</p>
+                </div>
+                <div class="about-image">
+                    <img src="../assets/images/me.jpeg" alt="Profile Picture">
+                </div>
+            </div>
         </section>
-        <section class="about-projects">
+
+        <section class="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Project One</h3>
+                        <p>A revolutionary web application that transforms user experience.</p>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Project Two</h3>
+                        <p>An innovative mobile app that redefines connectivity.</p>
+                        <div class="tech-stack">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>AWS</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Project Three</h3>
+                        <p>A cutting-edge AI solution for business analytics.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Docker</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="about-skills">
+
+        <section class="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Frontend Development</span>
+                        <span class="skill-percentage">60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="60"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Backend Development</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">UI/UX Design</span>
+                        <span class="skill-percentage">30%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="30"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Database Management</span>
+                        <span class="skill-percentage">50%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="50"></div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer-component></footer-component>
