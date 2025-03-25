@@ -97,6 +97,9 @@ main button {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 main button:hover {
@@ -112,12 +115,34 @@ main button:active {
 }
 
 main button i {
-    margin-left: 8px;
     transition: transform 0.3s ease;
 }
 
 main button:hover i {
     transform: rotate(15deg) scale(1.2);
+}
+
+.about-btn {
+    background: rgba(0, 123, 255, 0.1) !important;
+    border-color: rgba(0, 123, 255, 0.3) !important;
+}
+
+.about-btn:hover {
+    background: rgba(0, 123, 255, 0.2) !important;
+    border-color: rgba(0, 123, 255, 0.4) !important;
+}
+
+.about-btn .question-arrow {
+    animation: arrowBounce 1.5s infinite;
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
 }
 
 /* Add a playful animation for the cat icon */
@@ -130,7 +155,6 @@ main button i {
     animation: catBounce 2s infinite;
     animation-delay: 0.5s;
 }
-
 
 /* Add animation keyframes */
 @keyframes fadeInUp {

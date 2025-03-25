@@ -24,6 +24,9 @@ main {
     position: relative;
     display: inline-block;
     opacity: 0;
+}
+
+.section-title.animate {
     animation: titleFadeIn 0.8s ease forwards;
 }
 
@@ -35,6 +38,9 @@ main {
     width: 0;
     height: 4px;
     background: linear-gradient(90deg, #007bff, #00ff88);
+}
+
+.section-title.animate::after {
     animation: lineGrow 0.8s ease forwards 0.3s;
 }
 
@@ -63,7 +69,14 @@ main {
     flex: 1;
     opacity: 0;
     transform: translateX(-50px);
+}
+.about-text.animate {
     animation: slideInLeft 1s ease forwards;
+}
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
 }
 .about-text p {
     font-size: 1.2rem;
@@ -71,15 +84,14 @@ main {
     margin-top: 1.5rem;
 }
 .about-image {
-    flex: 1;
     position: relative;
     opacity: 0;
-    transform: translateX(50px);
+}
+.about-image.animate {
     animation: slideInRight 1s ease 0.3s forwards;
 }
 .about-image img {
-    width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 123, 255, 0.2);
 }
@@ -112,15 +124,17 @@ main {
     cursor: pointer;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
     width: 350px;
     flex-shrink: 0;
     text-align: center;
 }
-.project-card:nth-child(2) {
+.project-card.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+.project-card:nth-child(2).animate {
     animation-delay: 0.2s;
 }
-.project-card:nth-child(3) {
+.project-card:nth-child(3).animate {
     animation-delay: 0.4s;
 }
 .project-card:hover {
@@ -183,6 +197,8 @@ main {
     color: #fff;
     opacity: 0;
     transform: translateX(-20px);
+}
+.skill-name.animate {
     animation: slideInLeft 0.5s ease forwards;
 }
 .skill-percentage {
@@ -191,6 +207,8 @@ main {
     font-weight: 500;
     opacity: 0;
     transform: translateX(20px);
+}
+.skill-percentage.animate {
     animation: slideInRight 0.5s ease forwards;
 }
 .skill-bar {
@@ -208,15 +226,15 @@ main {
     position: relative;
     transition: width 1.5s ease-in-out;
 }
-/* Add animation delay for each skill item */
-.skill-item:nth-child(1) .skill-name,
-.skill-item:nth-child(1) .skill-percentage { animation-delay: 0.2s; }
-.skill-item:nth-child(2) .skill-name,
-.skill-item:nth-child(2) .skill-percentage { animation-delay: 0.4s; }
-.skill-item:nth-child(3) .skill-name,
-.skill-item:nth-child(3) .skill-percentage { animation-delay: 0.6s; }
-.skill-item:nth-child(4) .skill-name,
-.skill-item:nth-child(4) .skill-percentage { animation-delay: 0.8s; }
+/* Update animation delays for skills */
+.skill-item:nth-child(1) .skill-name.animate,
+.skill-item:nth-child(1) .skill-percentage.animate { animation-delay: 0.2s; }
+.skill-item:nth-child(2) .skill-name.animate,
+.skill-item:nth-child(2) .skill-percentage.animate { animation-delay: 0.4s; }
+.skill-item:nth-child(3) .skill-name.animate,
+.skill-item:nth-child(3) .skill-percentage.animate { animation-delay: 0.6s; }
+.skill-item:nth-child(4) .skill-name.animate,
+.skill-item:nth-child(4) .skill-percentage.animate { animation-delay: 0.8s; }
 
 @keyframes slideInLeft {
     from {

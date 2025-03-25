@@ -26,6 +26,12 @@ function downloadCV() {
 function redirectToContact() {
     window.location.href = '/pages/contact.html';
 }
+
+//Redirect to About Page js function
+function redirectToAbout() {
+    window.location.href = '/pages/about.html';
+}
+
 function snowFall() {
         const body = document.querySelector('body');
         for (let i = 0; i < 100; i++) {
@@ -38,3 +44,13 @@ function snowFall() {
             body.appendChild(snowflake);
         }
 }
+
+// Handle floating question click
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingQuestion = document.querySelector('.floating-question');
+    if (floatingQuestion) {
+        floatingQuestion.addEventListener('click', function() {
+            window.location.href = '/pages/about.html';
+        });
+    }
+});
