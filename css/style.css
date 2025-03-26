@@ -30,6 +30,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 main {
@@ -40,6 +41,7 @@ main {
     margin-left: 80px;
     margin-top: 70px; 
     text-transform: uppercase;
+    flex: 1;
 }
 main > h2 {
     font-size: 3rem;
@@ -192,3 +194,4 @@ main button i {
 html {
     scroll-behavior: smooth;
 }
+

@@ -44,13 +44,3 @@ function snowFall() {
             body.appendChild(snowflake);
         }
 }
-
-// Handle floating question click
-document.addEventListener('DOMContentLoaded', function() {
-    const floatingQuestion = document.querySelector('.floating-question');
-    if (floatingQuestion) {
-        floatingQuestion.addEventListener('click', function() {
-            window.location.href = '/pages/about.html';
-        });
-    }
-});
