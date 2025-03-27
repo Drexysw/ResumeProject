@@ -5,7 +5,9 @@
 }
 body{
     font-family: 'Space Grotesk', sans-serif;
-    background-color: #111;
+    background: linear-gradient(-45deg, #010112, #041035, #102034, #000634);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: #fff;
     line-height: 1.6;
     min-height: 100vh;
@@ -450,5 +452,10 @@ html {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
-}       
+}      
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  } 
 
