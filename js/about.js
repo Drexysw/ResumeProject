@@ -48,4 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe all sections that need animations
     const sections = document.querySelectorAll('.skills, .projects, .about-me');
     sections.forEach(section => observer.observe(section));
+
+    // Add functionality to the observer to trigger the animation for the interactive buttons when they come into view
+    const buttonObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.contact-btn, .journey-btn').forEach(button => {
+        buttonObserver.observe(button);
+    });
 }); 

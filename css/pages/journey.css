@@ -1,0 +1,89 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(-45deg, #010112, #041035, #102034, #000634);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.journey-section {
+    padding: 50px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.journey-title {
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    color: #007bff;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: heroTextFadeIn 1.5s ease forwards;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.timeline-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.timeline-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} 

@@ -32,6 +32,12 @@ function redirectToAbout() {
     window.location.href = '/pages/about.html';
 }
 
+//Redirect to Journey Page js function
+function redirectToJourney() {
+    window.location.href = '/pages/journey.html';
+}
+
+
 function snowFall() {
         const body = document.querySelector('body');
         for (let i = 0; i < 100; i++) {

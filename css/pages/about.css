@@ -404,7 +404,7 @@ html {
     font-size: 100px;
     font-weight: 800;
     text-align: center;
-    color: #4a3c3c;
+    color: #383030;
     position: relative;
     opacity: 0;
     transform: scale(0.9);
@@ -458,4 +458,44 @@ html {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   } 
+
+.interactive-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.contact-btn, .journey-btn {
+    padding: 20px 60px 18px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(45deg, #007bff, #00ff88);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: buttonPulse 2s infinite;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #007bff, #00ff88);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* White shadow effect */
+}
+
+.contact-btn.animate, .journey-btn.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.contact-btn:hover, .journey-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
 
