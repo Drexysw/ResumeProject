@@ -37,7 +37,7 @@ function redirectToJourney() {
     window.location.href = '/pages/journey.html';
 }
 
-
+//Snow Fall js function to create snowflakes on the  page
 function snowFall() {
         const body = document.querySelector('body');
         for (let i = 0; i < 100; i++) {

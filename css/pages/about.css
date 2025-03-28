@@ -157,7 +157,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 6rem 0;
+    padding: 6rem 0 1rem 0;
     width: 100%;
 }
 .project-cards {
@@ -228,7 +228,7 @@ main {
     gap: 1rem;
 }
 .skills {
-    padding: 8rem 0;
+    padding: 8rem 0 5rem 0;
     text-align: center;
 }
 .skills-container {
