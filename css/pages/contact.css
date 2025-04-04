@@ -6,7 +6,9 @@
 
 body{
     font-family: 'Overpass', sans-serif;
-    background-color: rgb(27, 27, 27);
+    background: linear-gradient(-45deg, #010112, #041035, #102034, #000634);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

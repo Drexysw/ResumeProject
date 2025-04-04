@@ -50,3 +50,26 @@ function snowFall() {
             body.appendChild(snowflake);
         }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px'
+    });
+
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        observer.observe(item);
+    });
+});
+
+function openCertificate(path) {
+    window.open(path, '_blank');
+}
