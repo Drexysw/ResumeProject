@@ -71,5 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openCertificate(path) {
-    window.open(path, '_blank');
+    // Try to open in a new tab
+    const newWindow = window.open(path, '_blank');
+    
+    // If popup is blocked or fails to open
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        // Create a temporary link and click it
+        const link = document.createElement('a');
+        link.href = path;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 }
